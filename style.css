@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', 'Poppins', sans-serif;
+}
+body{
+    background: linear-gradient(90deg, #111, #333, #111);
+    background-size: cover;
+    min-height: 100vh;
+}
+header{
+    height: 10vh;
+    background: linear-gradient(45deg, #ccc, #555);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    gap: 1em;
+}
+a{
+    text-decoration: none;
+    color: #ddd;
+    transition: 2s ease-in;
+}
+a:hover{
+    color: #fff;
+    border-bottom: #fff solid 2px;
+}
+main{
+    min-height: 80vh;
+}
+.splide li{
+    font-size: xx-large;
+    color: #fff;
+    height: 80vh;
+    background-size: cover;
+    background-position: top left;
+    animation: move 30s ease-in-out infinite;
+}
+@keyframes move {
+    from{
+        background-position: top left;
+    }
+    50% {
+        background-position: bottom right;
+    }
+    from{
+        background-position: top left;
+    }
+}
+footer{
+    height: 10vh;
+}
