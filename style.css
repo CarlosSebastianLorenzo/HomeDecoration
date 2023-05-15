@@ -70,3 +70,14 @@ footer{
         font-size: 4em;
     }
 }
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer ul {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    justify-content: center;
+}
