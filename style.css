@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', 'Poppins', sans-serif;
+    font-size: 1.3rem;
 }
 body{
     background: linear-gradient(90deg, #111, #333, #111);
@@ -16,6 +17,18 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+header picture{
+    display: flex;
+    max-height: 90%;
+    aspect-ratio: 1;
+    width: 25em;
+}
+header picture figcaption {
+    font-size: 2em;
+    font-weight: 600;
 }
 header ul{
     list-style: none;
@@ -23,14 +36,22 @@ header ul{
     display: flex;
     gap: 1em;
 }
-a{
+header a{
     text-decoration: none;
     color: #ddd;
-    transition: 2s ease-in;
+    position: relative;
 }
-a:hover{
-    color: #fff;
-    border-bottom: #fff solid 2px;
+header a:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #ddd;
+    width: 0%;
+    transition: .5s ease-in;
+}
+header a:hover:before{
+    width: 100%;
 }
 main{
     min-height: 80vh;
@@ -45,7 +66,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15em;
+    font-size: 8em;
     text-shadow: 2px 2px 8px #111;
 }
 .splide__pagination__page{
@@ -65,11 +86,6 @@ main{
 footer{
     height: 10vh;
 }
-@media screen and (max-width: 768px) {
-    .splide li{
-        font-size: 4em;
-    }
-}
 footer{
     display: flex;
     justify-content: center;
@@ -77,7 +93,21 @@ footer{
 }
 footer ul {
     display: flex;
-    gap: 1em;
+    gap: 2.5rem;
     list-style: none;
     justify-content: center;
+}
+footer ul li a *{
+    scale: 1.5;
+    color: #ddd;
+    transition: .5s ease;
+}
+footer ul li a *:hover{
+    scale: 1.7;
+    color: #0ff;
+}
+@media screen and (max-width: 768px) {
+    .splide li{
+        font-size: 4em;
+    }
 }
