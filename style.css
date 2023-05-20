@@ -83,6 +83,40 @@ main{
         background-position: top left;
     }
 }
+.sectors{
+    padding-top: 2rem;
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+        "one one two three"
+        "four five five three";
+}
+.sectors>article:nth-child(1){
+    grid-area: one;
+}
+.sectors>article:nth-child(2){
+    grid-area: two;
+}
+.sectors>article:nth-child(3){
+    grid-area: three;
+}
+.sectors>article:nth-child(4){
+    grid-area: four;
+}
+.sectors>article:nth-child(5){
+    grid-area: five;
+}
+.sectors article{
+    min-height: 10rem;
+    border-radius: 15px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*FOOTER*/
 footer{
     height: 10vh;
 }
@@ -109,5 +143,14 @@ footer ul li a *:hover{
 @media screen and (max-width: 768px) {
     .splide li{
         font-size: 4em;
+    }
+    .sectors{
+        padding: 1rem;
+        gap: .5rem;
+        grid-template-areas: 
+            "one one"
+            "two three"
+            "four three"
+            "five five";
     }
 }
