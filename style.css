@@ -112,6 +112,8 @@ main{
     min-height: 10rem;
     border-radius: 15px;
     background-color: aqua;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
