@@ -117,6 +117,14 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .5s ease;
+}
+.sectors article:hover{
+    mix-blend-mode:luminosity;
+    scale: 1.02;
+    color: #fff;
+    text-shadow: #111 1px 1px 1px;
+    cursor: pointer;
 }
 /*FOOTER*/
 footer{
