@@ -6,6 +6,9 @@
     font-family: 'Oswald', 'Poppins', sans-serif;
     font-size: 1.3rem;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: linear-gradient(90deg, #111, #333, #111);
     background-size: cover;
@@ -20,15 +23,25 @@ header{
     padding-left: 1em;
     padding-right: 1em;
 }
-header picture{
+header>a{
+    height: 100%;
+    text-decoration: none;
+    transition: .5s ease;
+}
+header>a:hover{
+    filter:brightness(1.7);
+}
+header>a>picture{
     display: flex;
     max-height: 90%;
     aspect-ratio: 1;
     width: 25em;
 }
-header picture figcaption {
+header>a picture figcaption {
+    text-align: center;
     font-size: 2em;
     font-weight: 600;
+    color: #1a394a;
 }
 header ul{
     list-style: none;
@@ -36,12 +49,12 @@ header ul{
     display: flex;
     gap: 1em;
 }
-header a{
+header nav a{
     text-decoration: none;
     color: #ddd;
     position: relative;
 }
-header a:before{
+header nav a:before{
     content: "";
     position: absolute;
     bottom: 0;
@@ -50,7 +63,7 @@ header a:before{
     width: 0%;
     transition: .5s ease-in;
 }
-header a:hover:before{
+header nav a:hover:before{
     width: 100%;
 }
 main{
@@ -68,6 +81,12 @@ main{
     align-items: center;
     font-size: 8em;
     text-shadow: 2px 2px 8px #111;
+}
+.splide li:hover{
+    cursor: grab;
+}
+.splide li:active{
+    cursor: grabbing;
 }
 .splide__pagination__page{
     display: none !important;
@@ -126,11 +145,50 @@ main{
     text-shadow: #111 1px 1px 1px;
     cursor: pointer;
 }
+/*SCROLL*/
+#scrollButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff80;
+    color: #111111dd;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    transition: .2s ease;
+}
+#scrollButton.show {
+    display: block;
+}
+#scrollButton:active{
+    background-color: #ffffffaa;
+    color: #111;
+}
+#scrollButton>*{
+    transition: .5s ease;
+}
+#scrollButton:hover>*{
+    animation: up 1s ease infinite;
+    scale: 1.1;
+}
+@keyframes up {
+    from{
+        translate: 0 0;
+    }
+    50%{
+        translate: 0 -.1em;
+    }
+    to{
+        translate: 0 0;
+    }
+}
 /*FOOTER*/
 footer{
     height: 10vh;
-}
-footer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +206,7 @@ footer ul li a *{
 }
 footer ul li a *:hover{
     scale: 1.7;
-    color: #0ff;
+    color: #fff;
 }
 @media screen and (max-width: 768px) {
     .splide li{
