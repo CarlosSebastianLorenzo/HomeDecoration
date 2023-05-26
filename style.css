@@ -16,6 +16,7 @@ body{
 }
 header{
     height: 10vh;
+    min-height: 3em;
     background: linear-gradient(45deg, #ccc, #555);
     display: flex;
     justify-content: space-between;
@@ -29,6 +30,7 @@ header>a{
     text-decoration: none;
     transition: .5s ease;
     display: flex;
+    align-content: center;
     max-height: 90%;
     aspect-ratio: 1;
     width: 25em;
@@ -41,6 +43,9 @@ header>a h1 {
     font-size: 2em;
     font-weight: 600;
     color: #1a394a;
+}
+.openNavBar{
+    display: none;
 }
 header ul{
     list-style: none;
@@ -208,8 +213,50 @@ footer ul li a *:hover{
     color: #fff;
 }
 @media screen and (max-width: 768px) {
+    header>a{
+        height: 2em;
+    }
+    header>a h1{
+        font-size: 1.2em;
+    }
+    .openNavBar{
+        display: block;
+        background: transparent;
+        border-radius: .5rem;
+        border: 2px solid #111;
+        height: 2em;
+        width: 2em;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .openNavBar[aria-expanded="false"]>.fa-xmark{
+        display: none;
+    }
+    .openNavBar[aria-expanded="true"]>.fa-bars{
+        display: none;
+    }
+    header nav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        height: 100vh;
+        /* width: 10em; */
+        width: 0;
+        padding-top: 2em;
+        text-align: center;
+        background: linear-gradient(180deg, #111111dd, #333333dd, #111);
+        transition: .5s ease;
+    }
+    
+    header nav ul{
+        flex-direction: column;
+    }
     .splide li{
         font-size: 4em;
+    }
+    .splide__arrows{
+        display: none;
     }
     .sectors{
         padding: 1rem;
