@@ -4,11 +4,10 @@ const navBar = document.querySelector('.primary-navigation');
 openNavBar.addEventListener('click', function(){
     if(openNavBar.getAttribute('aria-expanded')=='false'){
         openNavBar.setAttribute('aria-expanded', 'true')
-        navBar.style.width = '10em'
     } else{
         openNavBar.setAttribute('aria-expanded', 'false');
-        navBar.style.width = '0'
     }
+    navBar.classList.toggle('hide');
 });
 
 
