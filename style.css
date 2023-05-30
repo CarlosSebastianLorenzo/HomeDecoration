@@ -330,9 +330,14 @@ transition: .5s ease;
         /*Carrousel*/
         .splide li{
             font-size: 4em;
+            padding: 2rem;
         }
         .splide__arrows{
             display: none;
+        }
+        .splide li h1{
+            font-size: 2rem;
+            max-width: 50%;
         }
         /*Grid Template*/
         .sectors{
